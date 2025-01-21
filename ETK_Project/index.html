@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="status" style = "padding : 10px;font-size : 18px;"></div>
+  
+</body>
+
+  <script>
+    function updateConnetionStaus() {
+      const statusDiv = document.getElementById("status");
+
+      if (navigator.onLine) {
+        statusDiv.textContent = "🟢인터넷 연결됨";
+        statusDiv.style.color = "green";
+      } else {
+        statusDiv.textContent = "🔴 인터넷 사용 불가";
+        statusDiv.style.color = "red";
+      }
+
+    }
+
+    updateConnetionStaus();
+    window.addEventListener("online", updateConnetionStaus);
+    window.addEventListener("offline", updateConnetionStaus);
+
+
+
+  </script>
+
+
+
+</html>
